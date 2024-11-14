@@ -34,7 +34,7 @@ public class Application {
             productOption1.setName(p + "구매설명");
             productOption1.setDesc(p + "설명입니다");
             productOption1.setProduct(product);
-
+ 
             product.addProductOptions(productOption);
             product.addProductOptions(productOption1);
 
