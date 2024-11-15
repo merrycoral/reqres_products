@@ -77,6 +77,7 @@ stages {
                         git config --global user.email "your-email@example.com"
                         git config --global user.name "Jenkins CI"
 
+                        mkdir repo
                         cp kubernetes/deploy.yaml repo/kubernetes/deploy.yaml
                         cd repo
                         git add kubernetes/deploy.yaml
