@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: merrycoralreqresproducts 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: merrycoralreqresproducts
+  template:
+    metadata:
+      labels:
+        app: merrycoralreqresproducts 
+    spec:
+      containers:
+        - name: merrycoralreqresproducts 
+          image: hy06reg-e3affwbzg2d0c0cf.azurecr.io/merrycoralreqresproducts
+          ports:
+          - containerPort: 8080
