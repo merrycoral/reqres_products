@@ -1,10 +1,5 @@
 # Docker
-- task: Docker@2
-  inputs:
-    containerRegistry: 'hy06reg'
-    repository: 'product'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+
 # Build and push an image to Azure Container Registry
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -17,10 +12,14 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'f504ff04-2ab5-4233-b02b-a57a458eba81'
-  imageRepository: 'cqrsproducts'
-  containerRegistry: 'hy06reg-e3affwbzg2d0c0cf.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  # imageRepository: 'cqrsproducts'
+  # containerRegistry: 'hy06reg-e3affwbzg2d0c0cf.azurecr.io'
+  # dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
+
+  containerRegistry: 'hy06reg'
+  repository: 'product'
+  Dockerfile: '**/Dockerfile'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
